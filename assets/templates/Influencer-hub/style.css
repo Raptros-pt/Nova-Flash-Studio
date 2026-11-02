@@ -1,0 +1,50 @@
+/* CSS Custom Properties (:root): Variables stored globally.
+Changing a color value here updates the entire theme instanty.
+perfect for client customization! */
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #38bdf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6
+}
+
+/* Flexbox Hero Centering:
+display: flex turns on flexible layout rules.
+align-items centers content vertically;
+Justify-content centers it horizontally. */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.badge {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify- content: center;
+    margin-top: 2rem;
+}
