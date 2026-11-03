@@ -3,131 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Progression Portfolio | Wen & 3D Design</title>
+    <title>Manuel Vicente - Digital Storefront & Front-end Assets</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Header / Navigation -->
-<header class="navbar">
-    <div class="logo">
-        <span>//</span> PORTFOLIO
-    </div>
-    
-    <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#work">Archive</a>
-        
-        <!-- Hire Me Context Menu Dropdown -->
-        <div class="dropdown">
-            <button class="cta-button dropdown-toggle">Let's work together, hire me here!</button>
-            <div class="dropdown-menu">
-                <a href="https://www.fiverr.com/s/K33Aap2" target="_blank" rel="noopener">Fiverr Profile <span>&nearr;</span></a>
-                <a href="https://contra.com/manuel_vicente_yh0r4k9z" target="_blank" rel="noopener">Contra Profile <span>&nearr;</span></a>
-                <a href="https://x.com/Raptros_dev" target="_blank" rel="noopener">X (Twitter) <span>&nearr;</span></a>
-                <a href="mailto:manelvicente@outlook.pt">Direct Email <span>&nearr;</span></a>
+    <!-- Persistent Header Navigation -->
+    <header class="store-header">
+        <div class="nav-container">
+            <div class="brand">
+                <span class="developer-name">MANUEL VICENTE</span>
+                <span class="status-badge">Open for Commissions</span>
             </div>
+
+            <nav class="nav-links">
+                <a href="./index.html" class="nav-link active">Storefront</a>
+                <a href="./portfolio/index.html" class="nav-link">Visual Portfolio</a>
+                <a href="https://contra.com" target="_blank" class="btn-primary">Hire on Contra</a>
+            </nav>
         </div>
-    </nav>
-</header>
-    
-<!-- Hero Section -->
-<section id="hero" class="hero-section">
-    <div class="hero-content">
-        <span class="badge">Live Progression Archive</span>
-        <h1>Evolving from <span>3D Assets</span> to Production Web Code</h1>
-        <p>Documenting my journey across Figma layouts, Blender 3D UI components, Jitter animations, and clean frontend engineering</p>
-    </div>
+    </header>
+    <!-- Hero / Value Proposition -->
+        <section class="hero-banner">
+            <h1>Production-Ready Web Templates & Custom Buids</h1>
+            <p>Lightwight, zero-framework HTML5 & CSS3 layouts built for maximum performance, mobile responsiveness, and clean deployment.</p>
+            </section>
 
-    <!-- 3D Interactive Asset Display -->
-    <div class="hero-asset-container">
-        <img src="assets/obsidian-button.png" alt="3D Obsidian Chrome Button" id="hero-3d-button" class="floating-asset">
-    </div>
-</section>
+    <!-- Product Showcase Grid -->
+        <section class="catalog-section">
+        <h2 class="section-title">Available Templates & assets</h2>
 
-<!-- Archive / Progression Grid -->
-<section id="work" class="archive-section">
-    <h2>Progression Log</h2>
-    <div class="grid-container">
+            <div class="product-grid">
 
-        <!-- Card 1: Obsidian UI Widget -->
-        <article class="archive-card">
-            <div class="card-media">
-                <img src="assets/obsidian-button.png" alt="Obsidian UI Widget Preview" class="card-img">
-            </div>
-            <div class="card-content">
-                <div class="card-tag">Blender / 3D</div>
-                <h3>Obsidian UI Widget</h3>
-                <p>Custom obsidian and sage metallic button built and shaded using Blender's Principled BSDF and studio environment lighting.</p>
-                <a href="#" class="card-link">View Asset <span>&rarr;</span></a>
-            </div>
-        </article>
+    <!-- Featured Product: Influencer Hub -->
+            <article class="product-card featured">
+                <div class="card-header">
+                    <span class="badge">FEATURED ASSET</span>
+                    <span class="price">$49+</span>
+                </div>
+                    <h3>Influencer Hub v1</h3>
+                    <p> Sleek, high-converting bio & link aggregator template for content creators and streamers. Mobile-first responsive layout with fast load times.</p>
+                            
+                <div class="tech-stack">
+                    <span>HTML5</span>
+                    <span>CSS Grid/Flexbox</span>
+                    <span>Zero JS Bloat</span>
+                </div>
 
-        <!-- Card 2: Case Study Motion Workflow -->
-        <article class="archive-card">
-            <div class="card-media placeholder-media">
-                <span class="placeholder-text">// Motion Preview</span>
-            </div>
-            <div class="card-content">
-                <div class="card-tag">Figma / Jitter</div>
-                <h3>Case Study Motion Workflow</h3>
-                <p>Establishing lightweight vector motion design pipelines converting static UI components into smooth web interactions.</p>
-                <a href="#" class="card-link">Read Note <span>&rarr;</span></a>
-            </div>
-        </article>
+                <div class="card-actions">
+                    <a href="./templates/influecer-hub/index.html" target="_blank" class="btn-secondary">Live Demo</a>
+                    <a href="https://contra.com" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+            </article>
+    <!-- Product Coming Soon: Local Business / Kiosk -->
+              <article class="product-card disabled">
+                <div class="card-header">
+                    <span class="badge status-building">IN DEVELOPMENT</span>
+                    <span class="price">TBD</span>
+                </div>
+                    <h3>Local Business & Kios Starter</h3>
+                    <p>Ultra-fast landing page designed for local neighborhood spots, paper shops, and small storefronts to highlight services and hours.</p>
 
-        <!-- Card 3: Automated Client Scoping -->
-        <article class="archive-card">
-            <div class="card-media placeholder-media">
-                <span class="placeholder-text">// System Preview</span>
-            </div>
-            <div class="card-content">
-                <div class="card-tag">Agentplace.io</div>
-                <h3>Automated Client Scoping</h3>
-                <p>Custom AI-driven assistant built to automate freelance scope generation and retainer estimates.</p>
-                <a href="#" class="card-link">View System <span>&rarr;</span></a>
-            </div>
-        </article>
+                <div class="card-actions">
+                    <button class="btn-secondary" disabled>Building on YouTube</button>
+                </div>
+               </article>
 
-    <!-- =========================================================
-     PORTFOLIO ITEM: CSS PIKACHU ART
-     ========================================================= -->
-<div class="portfolio-card">
-    <div class="card-image-container">
-        <img src="assets/CSS pikachu.jpg" alt="Pure CSS Pikachu Drawing" class="portfolio-img">
-    </div>
-    
-    <div class="card-content">
-        <span class="tag">HTML / CSS / ASMR</span>
-        <h3>Pure CSS Pikachu Art</h3>
-        <p>Drawn line-by-line using raw HTML and CSS shape manipulation.</p>
-        <a href="https://github.com/raptros-pt/visual-portfolio" target="_blank" class="btn">View Source →</a>
-    </div>
-</div>
-</section>
+                </div>
+        </section>
 
-<!-- Site Footer -->
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <span class="logo">// PORTFOLIO</span>
-            <p>Documenting visual, technical, and engineering progression.</p>
-        </div>
-        <div class="footer-links">
-            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://fiverr.com" target="_blank" rel="noopener">Fiverr</a>
-            <a href="https://upwork.com" target="_blank" rel="noopener">Upwork</a>
-            <a href="mailto:manelvicente@outlook.pt">Email</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 Visual Progression Portfolio. All rights reserved.</p>
-        <div class="visitor-counter">
-            <span class="counter-label">// VISITOR COUNT:</span>
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fraptros-pt.github.io%2Fvisual-portfolio&count_bg=%238A9A86&title_bg=%231e2321&icon=&icon_color=%23E0E0E0&title=HITS&edge_flat=true" alt="Visitor Counter" />
-        </div>
-    </div>
-</footer>
+    <!-- About & Visual Portfolio Bridge -->
+        <section class="about-bridge" id="about">
+                <div class="bridge-content">
+                    <h2>Behind the Code</h2>
+                    <p>I build custom web layouts in public, documenting the exact engineering process line-by-line. Every template is crafted without heavy JavaScript framewors, keeping your site ultra-fast and accessible across all devices</p>
 
+                    <div class="bridge-cta">
+                        <a href="./portfolio/index.html" class="btn-outline">View Full Visual Portfolio & Experiments</a>
+                    </div>
+                </div>
+        </section>
+
+    </main>
+
+    <!-- Storefront Footer -->
+         <footer class="store-footer">
+            <p>&copy; 2026 Manuel Vicente. All custom assets buiçt for performance and simplicity</p>
+        </footer>
 </body>
 </html>
