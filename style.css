@@ -1,0 +1,235 @@
+/* Core Reset & Theme Variables */
+:root {
+    --bg-dark: #0f1117;
+    --card-bg: #1811b24;
+    --accent-green: #22c55e;
+    --accent-blue: #3b82f6;
+    --text-main: #f3f4f6;
+    --text-muteed: #9ca3af;
+    --border-color: #272a36;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Navigation */
+.store-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    background-color: rgba(15, 17, 23, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.developer-name {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--accent-green);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.nav-links {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-main);
+}
+
+/*Action Buttons */
+-btn-primary {
+    background-color: var(--accent-blue);
+    color: #fff;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-maun);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: var(--accent-blue);
+    color: #fff;
+}
+
+/*Hero Section */
+.hero-banner {
+    max-width: 800px;
+    margin: 4rem auto 2rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.hero-banner p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+}
+
+/* Catalog Grid */
+.catalog-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75;
+}
+
+.badge {
+    font-size: 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.badge.status-building {
+    background: rgba(234, 8, 0.1);
+    color: #eab308;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--accent-green);
+    font-size: 1.1rem;
+}
+
+.product-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    background: #232734;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    color: var(--text-muted);
+}
+
+.card-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/*About Bridge Section */
+.about-bridge {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.bridge-content p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 1rem auto;
+    font-size: 1.05rem;
+}
+
+/* Footer */
+.store-footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
