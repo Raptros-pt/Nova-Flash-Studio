@@ -45,6 +45,6 @@ Justify-content centers it horizontally. */
 .hero-actions {
     display: flex;
     gap: 1rem;
-    justify- content: center;
+    justify-content: center;
     margin-top: 2rem;
 }
