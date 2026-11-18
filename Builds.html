@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Builds & Interactive Lab | Nova Flash Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #FAF8F5;
+            --surface-white: #FFFFFF;
+            --ink-dark: #18181B;
+            --ink-muted: #52525B;
+            --gold-accent: #C5A059;
+            --border-subtle: #E4E4E7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--ink-dark);
+            line-height: 1.6;
+        }
+
+        /* Studio Navbar */
+        .navbar {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: var(--ink-dark);
+        }
+
+        .brand span {
+            color: var(--gold-accent);
+            font-size: 0.85rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink-dark);
+        }
+
+        .btn-pill-dark {
+            background: var(--ink-dark);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            transition: transform 0.2s ease, opacity 0.2s;
+        }
+
+        .btn-pill-dark:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        /* Header Section */
+        .page-header {
+            max-width: 1140px;
+            margin: 40px auto 50px;
+            padding: 0 32px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            max-width: 720px;
+        }
+
+        .page-header p {
+            color: var(--ink-muted);
+            font-size: 1.05rem;
+            max-width: 620px;
+        }
+
+        /* Builds Grid */
+        .builds-grid {
+            max-width: 1140px;
+            margin: 0 auto 80px;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+            gap: 32px;
+        }
+
+        .build-card {
+            background: var(--surface-white);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .build-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Visual Preview Header inside Card */
+        .card-preview {
+            height: 210px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .preview-cucco {
+            background: linear-gradient(135deg, #2b2318 0%, #463522 100%);
+            color: #FAF8F5;
+        }
+
+        .preview-ocarina {
+            background: linear-gradient(135deg, #121513 0%, #232925 100%);
+            color: #F4EFE6;
+        }
+
+        .preview-badge {
+            align-self: flex-start;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+        }
+
+        .preview-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+        }
+
+        /* Card Content Body */
+        .card-body {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .card-body p {
+            color: var(--ink-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--bg-cream);
+            border: 1px solid var(--border-subtle);
+            color: var(--ink-dark);
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .live-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #16A34A;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #16A34A;
+            border-radius: 50%;
+        }
+
+        /* Bottom Conversion Banner */
+        .cta-box {
+            max-width: 1140px;
+            margin: 0 auto 80px;
+            padding: 0 32px;
+        }
+
+        .cta-inner {
+            background: var(--ink-dark);
+            color: #FFFFFF;
+            border-radius: 24px;
+            padding: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .cta-inner h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .cta-inner p {
+            color: #A1A1AA;
+            max-width: 520px;
+        }
+
+        .btn-pill-cream {
+            background: var(--bg-cream);
+            color: var(--ink-dark);
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-pill-cream:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .builds-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-inner {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">NOVA FLASH <span>STUDIO</span></a>
+        <div class="nav-links">
+            <a href="index.html#services">Services</a>
+            <a href="Builds.html" style="color: var(--ink-dark); font-weight: 700;">Recent Builds</a>
+            <a href="index.html#contact" class="btn-pill-dark">Start Project</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <span class="eyebrow">Interactive UI Lab & Live Demos</span>
+        <h1>Engineered for Engagement.</h1>
+        <p>Most websites lose visitors in three seconds. Below are live, hand-coded interactive builds demonstrating custom JavaScript state logic, tactile micro-interactions, and browser-synthesized audio—built with zero heavy libraries.</p>
+    </header>
+
+    <main class="builds-grid">
+        
+        <!-- Project 1: Kakariko Cucco -->
+        <article class="build-card">
+            <div>
+                <div class="card-preview preview-cucco">
+                    <span class="preview-badge">Gamified Micro-Interaction</span>
+                    <div class="preview-title">Kakariko Cucco</div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <p>An interactive stress-test and state-machine showcase inspired by classic RPG mechanics. Repeated user interactions escalate a dynamic rage meter, shifting CSS themes, warning states, and triggering a full-viewport swarm event at 100%.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Vanilla JavaScript</span>
+                            <span class="tag">CSS State Machines</span>
+                            <span class="tag">Keyframe Animations</span>
+                            <span class="tag">Interactive UI</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="live-status"><span class="status-dot"></span> Interactive Demo</span>
+                        <a href="./Cucco/index.html" class="btn-pill-dark">Launch Live Build →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 2: Hyrulean Songbook -->
+        <article class="build-card">
+            <div>
+                <div class="card-preview preview-ocarina">
+                    <span class="preview-badge">Web Audio API & Input Logic</span>
+                    <div class="preview-title">Hyrulean Songbook</div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <p>A playable, keyboard-accessible Fairy Ocarina built directly in the browser. Synthesizes real-time musical tones using the native Web Audio API (zero external audio files) and tracks sequential note patterns to unlock hidden melodies.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Web Audio API</span>
+                            <span class="tag">Keyboard Events</span>
+                            <span class="tag">Pattern Recognition</span>
+                            <span class="tag">Zero Dependencies</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <span class="live-status"><span class="status-dot"></span> Interactive Demo</span>
+                        <a href="./ocarina/index.html" class="btn-pill-dark">Launch Live Build →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <section class="cta-box">
+        <div class="cta-inner">
+            <div>
+                <h2>Want this level of craft on your site?</h2>
+                <p>From sub-second business landing pages to custom interactive elements that make your brand unforgettable.</p>
+            </div>
+            <a href="index.html#contact" class="btn-pill-cream">Book a Custom Build →</a>
+        </div>
+    </section>
+
+</body>
+</html>

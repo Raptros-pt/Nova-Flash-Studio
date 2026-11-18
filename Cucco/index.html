@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakariko Cucco | Interactive Rage Meter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand"><span>▲</span> KAKARIKO LABS</div>
+        <a href="../builds.html" class="nav-back">← Back to Recent Builds</a>
+    </nav>
+
+    <main class="stage" id="stage">
+        <div class="card" id="cucco-card">
+            <span class="badge" id="badge-text">Peaceful Farmyard</span>
+            <h1 id="title-text">Kakariko Cucco</h1>
+            <p id="desc-text">A gentle poultry specimen. Absolutely harmless. Do not provoke under any circumstances.</p>
+
+            <div class="meter-container">
+                <div class="meter-label">
+                    <span>AGRESSION LEVEL</span>
+                    <span id="rage-pct">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <button class="cucco-btn" id="provoke-btn">
+                <span>🐔</span> <span id="btn-label">Provoke Cucco</span>
+            </button>
+            <button class="reset-btn" id="reset-btn">Reset Peace</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

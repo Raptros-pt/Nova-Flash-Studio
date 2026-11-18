@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ocarina of Time | Interactive Songbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <span class="triforce">▲</span> HYRULEAN SONGBOOK
+        </div>
+        <a href="https://raptros-pt.github.io/Nova-Flash-Studio/" target="_blank" class="nav-cta">Built by Nova Flash Studio</a>
+    </nav>
+
+    <main class="ocarina-stage">
+        <div class="songbook-container">
+            <header class="header-box">
+                <span class="badge">SACRED INSTRUMENT</span>
+                <h1>Fairy Ocarina</h1>
+                <p>Play using your keyboard or click the notes. Learn ancient melodies to alter reality.</p>
+            </header>
+
+            <!-- Screen Box -->
+            <div class="screen-box">
+                <div class="song-title" id="song-display">Ready to Play...</div>
+                <div class="note-history" id="note-history">---</div>
+                <button id="reset-notes-btn" class="reset-btn">↺ Clear Notes</button>
+            </div>
+
+            <!-- Ocarina Visual Interface -->
+            <div class="ocarina-pads">
+                <!-- C-Up -->
+                <button class="ocarina-btn" data-note="D4" data-key="KeyW">
+                    <span class="btn-icon">▲</span>
+                    <span class="btn-label">C-Up</span>
+                    <span class="key-hint">W</span>
+                </button>
+                
+                <!-- Middle Row (C-Left, C-Down, C-Right) -->
+                <div class="pad-row-middle">
+                    <button class="ocarina-btn" data-note="A3" data-key="KeyA">
+                        <span class="btn-icon">◀</span>
+                        <span class="btn-label">C-Left</span>
+                        <span class="key-hint">A</span>
+                    </button>
+                    <button class="ocarina-btn" data-note="B3" data-key="KeyS">
+                        <span class="btn-icon">▼</span>
+                        <span class="btn-label">C-Down</span>
+                        <span class="key-hint">S</span>
+                    </button>
+                    <button class="ocarina-btn" data-note="C4" data-key="KeyD">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-label">C-Right</span>
+                        <span class="key-hint">D</span>
+                    </button>
+                </div>
+
+                <!-- A Button -->
+                <button class="ocarina-btn trigger-btn" data-note="F4" data-key="Space">
+                    <span class="btn-icon">●</span>
+                    <span class="btn-label">A Button</span>
+                    <span class="key-hint">SPACE</span>
+                </button>
+            </div>
+
+            <!-- Grimoire -->
+            <div class="songs-grimoire">
+                <h3>Ancient Melodies</h3>
+                <ul>
+                    <li><span>Song of Time</span> <code class="code-tag">Right, Down, A-Btn, Right, Down, A-Btn</code></li>
+                    <li><span>Song of Storms</span> <code class="code-tag">Left, Down, A-btn, Left, Down, A-Btn</code></li>
+                    <li><span>Zelda's Lullaby</span> <code class="code-tag">down, Up, Right, down, Up, Right</code></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="studio-banner">
+        <div class="banner-inner">
+            <div>
+                <h3>Want a website with actual personality?</h3>
+                <p>Custom front-end design & interactive web experiences crafted by <strong>Nova Flash Studio</strong>.</p>
+            </div>
+            <a href="https://raptros-pt.github.io/Nova-Flash-Studio/" target="_blank" class="btn-gold">View Portfolio & Hire →</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

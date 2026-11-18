@@ -1,0 +1,304 @@
+:root {
+    --bg-dark: #121513;
+    --parchment: #f4efe6;
+    --gold: #c5a059;
+    --gold-hover: #d4af37;
+    --brown-panel: #2b2318;
+    --border-gold: #8c7343;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--parchment);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1, h2, h3, .brand {
+    font-family: 'Cinzel', serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    background: rgba(18, 21, 19, 0.95);
+}
+
+.brand {
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--parchment);
+}
+
+.triforce {
+    color: var(--gold);
+    margin-right: 6px;
+}
+
+.nav-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--parchment);
+    padding: 8px 16px;
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+    color: #121513;
+}
+
+.ocarina-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    flex-grow: 1;
+}
+
+.songbook-container {
+    background: var(--brown-panel);
+    border: 2px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--gold);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.header-box h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: var(--parchment);
+}
+
+.header-box p {
+    color: #b5a99a;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.screen-box {
+    background: #18140f;
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 30px;
+}
+
+.song-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+}
+
+.note-history {
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: #8c8275;
+    letter-spacing: 2px;
+}
+
+.reset-btn {
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: #9c9182;
+    font-family: inherit;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+/* Strict Layout Controls for Buttons */
+.ocarina-pads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.pad-row-middle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.ocarina-btn {
+    background: #382e21;
+    border: 2px solid var(--border-gold);
+    color: var(--parchment);
+    width: 95px;
+    height: 75px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 5px 0 #1b1610;
+    flex-shrink: 0;
+}
+
+.trigger-btn {
+    width: 309px;
+    height: 44px;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ocarina-btn:hover {
+    background: #463a2b;
+    border-color: var(--gold-hover);
+}
+
+.ocarina-btn:active, .ocarina-btn.active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #1b1610;
+    background: var(--gold);
+    color: #121513;
+}
+
+.btn-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.btn-label {
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.key-hint {
+    font-size: 0.48rem;
+    color: #9c9182;
+    margin-top: 1px;
+}
+
+.ocarina-btn:active .key-hint, .ocarina-btn.active .key-hint {
+    color: #382e21;
+}
+
+.songs-grimoire {
+    text-align: left;
+    background: #18140f;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.songs-grimoire h3 {
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.songs-grimoire ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.songs-grimoire li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #b5a99a;
+}
+
+.code-tag {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+}
+
+.studio-banner {
+    background: #0b0d0c;
+    color: #fff;
+    padding: 30px 40px;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.banner-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-inner h3 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.banner-inner p {
+    color: #8c8275;
+    font-size: 0.85rem;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #121513;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background 0.2s;
+}
+
+.btn-gold:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+}
